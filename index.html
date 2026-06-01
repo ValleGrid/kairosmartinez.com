@@ -93,16 +93,21 @@
       background: rgba(255,255,255,0.04);
     }
 .logo-brand {
-  gap: 0;
-  margin-left: -350px;
+   transform: translateX(-120px);
 }
 
-.site-logo {
-  height: 200px;
-  width: 600;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.site-logo{
+    height:190px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+
+    image-rendering:-webkit-optimize-contrast;
+    filter:
+      contrast(1.15)
+      saturate(1.08)
+      brightness(1.03)
+      drop-shadow(0 10px 18px rgba(0,0,0,.35));
  
 }
     .nav-links {
@@ -118,29 +123,32 @@
       color: var(--gold-light);
     }
 
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      padding: 140px 0 88px;
-      background:
-        radial-gradient(circle at 80% 30%, rgba(14,92,115,0.35), transparent 38%),
-        linear-gradient(135deg, #08162b 0%, #0b1f36 48%, #073345 100%);
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    padding:140px 0 88px;
+
+    background:
+      radial-gradient(circle at 82% 22%,
+      rgba(14,165,164,.16) 0%,
+      transparent 38%),
+
+      linear-gradient(
+      135deg,
+      #071427 0%,
+      #0B1C34 45%,
+      #08253F 75%,
+      #073345 100%);
+
+    color:#fff;
+    overflow:hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
-      background-size: 58px 58px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+   .hero::before{
+    content:none;
+    display:none;
     }
 
     .hero::after {
