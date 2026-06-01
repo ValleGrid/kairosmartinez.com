@@ -98,20 +98,19 @@
 }
 
 .site-logo{
-   height:125px;
+  height:125px;
     width:auto;
     display:block;
     object-fit:contain;
 
-    opacity:.98;
-
+    image-rendering:crisp-edges;
     image-rendering:-webkit-optimize-contrast;
 
     filter:
-      contrast(1.15)
-      saturate(1.08)
-      brightness(1.03)
-      drop-shadow(0 8px 16px rgba(0,0,0,.35));
+      contrast(1.35)
+      saturate(1.12)
+      brightness(1.05)
+      drop-shadow(0 8px 14px rgba(0,0,0,.30));
 }
     .nav-links {
       display: flex;
@@ -127,12 +126,21 @@
     }
 
 .hero{
+  position:relative;
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    padding:140px 0 88px;
+
     background:
       linear-gradient(
       135deg,
-      #00152E 0%,
-      #022043 50%,
-      #07354A 100%);
+      #031226 0%,
+      #051A34 55%,
+      #082340 100%);
+
+    color:#fff;
+    overflow:hidden;
     }
 
    .hero::before{
