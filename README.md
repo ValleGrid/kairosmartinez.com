@@ -1,2 +1,2 @@
 # kairosmartinez.com
-Valle Grid | Strategic Energy Intelligence | ERCOT • PJM • Midwest
+Valle Grid | Strategic Energy Intelligence | ERCOT • PJM • MISO
