@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valle Grid | Strategic Energy Intelligence</title>
+  <meta name="description" content="Multi-market commercial energy strategy for high-load operations across ERCOT, PJM, and Midwest power regions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #12223D;
+      --navy-dark: #0B1629;
+      --gold: #C8A04D;
+      --gold-light: #E3C878;
+      --steel: #5A6578;
+      --teal: #0EA5A4;
+      --white: #FFFFFF;
+      --soft: #F5F7FA;
+      --border: rgba(18, 34, 61, 0.14);
+      --shadow: 0 24px 70px rgba(11, 22, 41, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+      padding: 28px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gold);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-weight: 800;
+      letter-spacing: -0.08em;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 88px;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(14,165,164,0.18), transparent 28%),
+        linear-gradient(135deg, rgba(18,34,61,0.98), rgba(11,22,41,0.98));
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      bottom: -160px;
+      width: 620px;
+      height: 620px;
+      border: 1px solid rgba(200,160,77,0.28);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 80px rgba(200,160,77,0.025);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 840px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 26px;
+      max-width: 920px;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2.3vw, 24px);
+      color: rgba(255,255,255,0.78);
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .markets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 38px;
+    }
+
+    .market-pill {
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      color: rgba(255,255,255,0.86);
+      background: rgba(255,255,255,0.055);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 14px 34px rgba(200,160,77,0.22);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(200,160,77,0.7);
+      color: var(--gold-light);
+      background: rgba(255,255,255,0.035);
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-title.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-title p {
+      color: var(--steel);
+      font-size: 18px;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 18px 45px rgba(18,34,61,0.06);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(200,160,77,0.13);
+      color: var(--gold);
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .card .label {
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--steel);
+      font-size: 15.5px;
+    }
+
+    .hybrid {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .hybrid::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(120deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(30deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 74px 74px;
+      opacity: 0.45;
+    }
+
+    .hybrid .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hybrid .section-title p,
+    .hybrid-card p {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .hybrid-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .hybrid-card {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 26px;
+      padding: 34px;
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(8px);
+    }
+
+    .hybrid-card h3 {
+      font-size: 26px;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+      margin-bottom: 22px;
+      box-shadow: 0 0 0 7px rgba(14,165,164,0.12);
+    }
+
+    .capabilities {
+      background: var(--soft);
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .cap-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+    }
+
+    .cap-item span {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 4px;
+      position: relative;
+    }
+
+    .cap-item span::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 5px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .cap-item h3 {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .cap-item p {
+      color: var(--steel);
+      font-size: 15px;
+    }
+
+    .cta {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      color: var(--white);
+      padding-bottom: 110px;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      bottom: -110px;
+      height: 210px;
+      background: var(--gold);
+      border-radius: 50% 50% 0 0;
+      opacity: 0.95;
+    }
+
+    .cta-wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+      gap: 46px;
+      align-items: start;
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.72);
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    label {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      margin-bottom: 16px;
+      font: inherit;
+      color: var(--navy);
+      background: #FBFCFE;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .form-button {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .footer {
+      padding: 30px 0;
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.66);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .risk-grid,
+      .hybrid-grid,
+      .cap-grid,
+      .cta-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-wrap {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .hero {
+        padding-top: 122px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="brand" aria-label="Valle Grid home">
+          <span class="brand-mark">VG</span>
+          <span>Valle Grid</span>
+        </a>
+        <div class="nav-links">
+          <a href="#industries">Industries</a>
+          <a href="#advantage">Advantage</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <header id="top" class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">ERCOT • PJM • Midwest</div>
+        <h1>Powering the Infrastructure That Cannot Turn Off.</h1>
+        <p>Valle Grid delivers multi-market commercial energy strategy optimized by Kairos intelligence. Built for enterprises operating continuous, high-load facilities consuming 500+ MWh annually.</p>
+        <div class="markets" aria-label="Markets served">
+          <span class="market-pill">ERCOT</span>
+          <span class="market-pill">PJM</span>
+          <span class="market-pill">Midwest Power Markets</span>
+          <span class="market-pill">500+ MWh Operations</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Request Strategy Consultation</a>
+          <a class="btn btn-secondary" href="#capabilities">View Advisory Capabilities</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="industries" class="risk">
+        <div class="container">
+          <div class="section-title center">
+            <div class="kicker">Enterprise Risk Mitigation</div>
+            <h2>Zero Downtime. Zero Margin for Error.</h2>
+            <p>For continuous-process industries, a 10-minute power disruption can result in lost inventory, shattered service level agreements, and damaged machinery. We help organizations reduce operational exposure through procurement strategy, market intelligence, and resilient energy planning.</p>
+          </div>
+
+          <div class="risk-grid">
+            <article class="card">
+              <div class="icon">▣</div>
+              <h3>Data Centers</h3>
+              <div class="label">Absolute Digital Uptime</div>
+              <p>Support tier-3 and tier-4 operations with resilient procurement structures designed around massive cooling demand, load growth, and regional power constraints.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon">❄</div>
+              <h3>Cold Storage Logistics</h3>
+              <div class="label">Uninterrupted Thermal Stability</div>
+              <p>Protect frozen assets against thermal volatility with energy strategies built around peak demand, automation risk, and facility-level operating requirements.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon">◇</div>
+              <h3>Precision Manufacturing</h3>
+              <div class="label">Continuous Process Security</div>
+              <p>Reduce exposure to unscheduled restarts in molding, plastics, and heavy manufacturing through market timing, contract structure, and load-profile discipline.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="advantage" class="hybrid">
+        <div class="container">
+          <div class="section-title">
+            <div class="kicker">The Hybrid Advantage</div>
+            <h2>Strategic Execution. Market Intelligence.</h2>
+            <p>Valle Grid combines large-load energy execution with Kairos market intelligence to help commercial operators make disciplined decisions across volatile power regions.</p>
+          </div>
+
+          <div class="hybrid-grid">
+            <article class="hybrid-card">
+              <div class="dot"></div>
+              <h3>Valle Grid Infrastructure Strategy</h3>
+              <p>Commercial energy execution for large industrial, mission-critical, and continuous-process operations. We help clients align facility location, procurement structures, market exposure, and grid considerations across ERCOT, PJM, and Midwest power markets to support long-term operational resilience.</p>
+            </article>
+
+            <article class="hybrid-card">
+              <div class="dot"></div>
+              <h3>Powered by Kairos Intelligence</h3>
+              <p>Forward analytics, market timing, procurement strategy, and risk-managed planning designed to convert wholesale volatility into predictable operational decision-making. We translate multi-market power complexity into institutional energy strategy.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="capabilities">
+        <div class="container">
+          <div class="section-title center">
+            <div class="kicker">Advisory Capabilities</div>
+            <h2>Multi-Market Energy Strategy for High-Load Operations.</h2>
+            <p>Built for procurement teams, ownership groups, and executives managing material power exposure across ERCOT, PJM, and Midwest markets.</p>
+          </div>
+
+          <div class="cap-grid">
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Large-Load Procurement Strategy</h3>
+                <p>Customized procurement structures engineered around operational profiles exceeding 500+ MWh annual consumption.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Regional Market Intelligence</h3>
+                <p>Strategic guidance across ERCOT, PJM, and Midwest power regions using forward analytics and seasonal volatility analysis.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Grid & Site Selection Analytics</h3>
+                <p>Identifying regions where capacity, infrastructure readiness, localized reliability, and long-term energy economics support expansion.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Market Timing & Risk Management</h3>
+                <p>Using forward curves, seasonal procurement windows, and wholesale intelligence to reduce exposure to price volatility.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Demand Response & Flexibility</h3>
+                <p>Structuring opportunities to monetize flexible load participation while preserving operational continuity.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <span aria-hidden="true"></span>
+              <div>
+                <h3>Executive Energy Advisory</h3>
+                <p>Boardroom-ready guidance for CFOs, operators, and procurement teams evaluating contract risk and future load growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <div class="container cta-wrap">
+          <div>
+            <div class="kicker">Secure Your Load Strategy</div>
+            <h2>Align Your Energy Strategy with Grid Reality.</h2>
+            <p>Managing energy for 500+ MWh operations requires institutional precision. Contact Valle Grid to evaluate your facility’s procurement structure, market exposure, and multi-market load strategy.</p>
+          </div>
+
+          <form action="mailto:robert@kairosmartinez.com" method="post" enctype="text/plain">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+
+            <label for="company">Company / Enterprise Name</label>
+            <input id="company" name="company" type="text" placeholder="Company name" required>
+
+            <label for="load">Estimated Annual MWh Load</label>
+            <select id="load" name="estimated_load" required>
+              <option value="">Select range</option>
+              <option>500–1,000 MWh</option>
+              <option>1,000–5,000 MWh</option>
+              <option>5,000+ MWh</option>
+              <option>Not sure yet</option>
+            </select>
+
+            <label for="message">Primary Energy Concern</label>
+            <textarea id="message" name="message" placeholder="Contract renewal, expansion, volatility exposure, cold storage, data center load, manufacturing operations..."></textarea>
+
+            <button class="btn btn-primary form-button" type="submit">Connect with an Advisor</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© 2026 Valle Grid. Strategic energy intelligence for high-load commercial operations.</div>
+        <div>ERCOT • PJM • Midwest</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
