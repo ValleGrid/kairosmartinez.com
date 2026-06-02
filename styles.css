@@ -438,3 +438,11 @@ body {
     text-align: center;
   }
 }
+/* QUICK SPACING FIXES */
+.section-tagline {
+  margin-bottom: 24px;
+}
+
+.hero-section {
+  padding: 220px 0 100px 0;
+}
