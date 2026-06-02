@@ -461,17 +461,11 @@ body {
   align-items: center;
   gap: 12px;
 }
+
 .nav-logo-img {
-  height: 32px; 
-  width: auto;
+  height: 50px;       /* Increased height to let the logo breathe */
+  width: auto;        /* Preserves the natural horizontal shape of your logo */
+  object-fit: contain;/* Ensures the image doesn't get clipped or cropped */
 }
+
 /* MOBILE LOGO FIX */
-@media (max-width: 768px) {
-  .nav-logo-img {
-    height: 24px !important; /* Forces the logo to shrink nicely on tiny screens */
-    width: auto !important;
-  }
-  .logo-container {
-    gap: 8px; /* Tightens space between icon and text */
-  }
-}
