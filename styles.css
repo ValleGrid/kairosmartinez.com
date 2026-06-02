@@ -446,3 +446,22 @@ body {
 .hero-section {
   padding: 220px 0 100px 0;
 }
+/* QUICK SPACING FIXES */
+.section-tagline {
+  margin-bottom: 24px;
+}
+
+.hero-section {
+  padding: 220px 0 100px 0;
+}
+
+/* LOGO FIXES */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo-img {
+  height: 32px; 
+  width: auto;
+}
