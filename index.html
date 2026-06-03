@@ -7,282 +7,7 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ALL EMISSIONS & DESIGN VARIABLE BLOCKS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-dark: #090b0e;
-            --bg-card-dark: #11141a;
-            --bg-light: #f7f9fa;
-            --text-light: #ffffff;
-            --text-dark: #090b0e;
-            --text-muted: #64748b;
-            --primary-blue: #0091ff;
-            --accent-blue: #1d4ed8;
-            --font-serif: 'Playfair Display', 'Didot', 'Georgia', serif;
-            --font-sans: 'Inter', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* TYPOGRAPHY BLOCKS */
-        .serif-text {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-weight: 400;
-        }
-
-        .section-number {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .section-tagline {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        .main-title {
-            font-family: var(--font-sans);
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-        }
-
-        /* NAVIGATION BAR */
-        .navbar {
-            background-color: rgba(9, 11, 14, 0.95);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            height: 90px;
-        }
-
-        .logo-wrapper {
-            background: #ffffff;
-            padding: 6px 12px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-logo-img {
-            height: 52px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-light);
-        }
-
-        .btn-nav-cta {
-            background-color: var(--primary-blue);
-            color: var(--text-light) !important;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .btn-nav-cta:hover {
-            background-color: var(--accent-blue);
-        }
-
-        /* STRUCTURAL CONTAINER BLOCKS */
-        .section-block {
-            padding: 120px 0;
-        }
-
-        .light-section {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-        }
-
-        .layout-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .split-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 80px;
-            align-items: flex-start;
-        }
-
-        /* GRID CARDS & ELEMENTS */
-        .dark-panel-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .dark-grid-card {
-            background-color: var(--bg-card-dark);
-            padding: 40px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .white-stack-panel {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .white-stack-item {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 40px;
-            margin-bottom: -1px;
-        }
-
-        /* BUTTONS */
-        .btn-row {
-            display: flex;
-            gap: 16px;
-            margin-top: 40px;
-        }
-
-        .btn-solid {
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 32px;
-            font-weight: 600;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: inline-block;
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px 32px;
-            font-weight: 600;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            display: inline-block;
-        }
-
-        /* SPECIFIC GRID BLUE BULLETS */
-        .blue-diamond-list {
-            list-style: none;
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .blue-diamond-list li {
-            position: relative;
-            padding-left: 28px;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .blue-diamond-list li::before {
-            content: "◆";
-            position: absolute;
-            left: 0;
-            color: var(--primary-blue);
-            font-size: 0.9rem;
-        }
-
-        .inner-blue-link {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 32px;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 2px;
-        }
-
-        .inner-blue-link:hover {
-            border-color: var(--primary-blue);
-        }
-
-        /* FOOTER PANELS */
-        .footer-wrapper {
-            background-color: var(--bg-dark);
-            padding: 80px 0 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 64px;
-            margin-bottom: 60px;
-        }
-
-        /* RESPONSIVE SUB-VIEWPORTS */
-        @media (max-width: 992px) {
-            .split-grid, .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-            .dark-panel-grid {
-                grid-template-columns: 1fr;
-            }
-            .main-title {
-                font-size: 2.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css?v=clear_fubar">
 </head>
 <body>
 
@@ -302,7 +27,7 @@
         </div>
     </nav>
 
-    <!-- 00 HERO PANEL -->
+    <!-- 00 HERO BANNER SECTION -->
     <header class="section-block" style="padding-top: 200px;">
         <div class="layout-container split-grid">
             <div>
@@ -325,3 +50,73 @@
                 </div>
                 <div style="margin-bottom: 40px;">
                     <span style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700;">02 / FOCUS</span>
+                    <h3 style="font-size: 1.75rem; margin-top: 8px; font-weight: 500;">Commercial <br>Procurement</h3>
+                </div>
+                <div>
+                    <span style="font-size: 0.8rem; color: var(--primary-blue); font-weight: 700;">03 / METHOD</span>
+                    <h3 style="font-size: 1.75rem; margin-top: 8px; font-weight: 500;">Multi-Market <br>Strategy</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 01 WHAT WE DO PANEL -->
+    <section id="what-we-do" class="section-block light-section">
+        <div class="layout-container split-grid">
+            <div>
+                <span class="section-number">01</span>
+                <span class="section-tagline">What We Do</span>
+                <h2 class="main-title" style="color: var(--text-dark); font-size: 3.5rem; margin-top: 16px;">Energy strategy <span class="serif-text" style="color: var(--accent-blue);">that moves</span> across markets.</h2>
+            </div>
+            <div style="padding-top: 60px;">
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 60px;">We empower individuals and organizations to harness their potential in deregulated energy markets. Two practice areas, one unified strategy — built on real market experience and disciplined execution.</p>
+                <div class="split-grid" style="grid-template-columns: 1fr 1fr; gap: 32px;">
+                    <div style="background: #090b0e; color: #fff; padding: 40px; border-radius: 4px;">
+                        <span style="font-family: var(--font-serif); font-size: 2rem; color: var(--primary-blue);">A</span>
+                        <h4 style="font-size: 1.25rem; margin: 24px 0 16px 0;">Power Procurement Strategy</h4>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 24px;">We structure energy contracts across ERCOT, PJM, and Midwest markets to reduce exposure and secure long-term positions.</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 8px;">◆ Contract structuring & timing</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 8px;">◆ Risk exposure analysis</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 32px;">◆ Forward curve evaluation</p>
+                        <a href="#contact" style="color: var(--primary-blue); text-decoration: none; font-size: 0.9rem; font-weight: bold;">Discuss your power strategy ➔</a>
+                    </div>
+                    <div style="background: #090b0e; color: #fff; padding: 40px; border-radius: 4px;">
+                        <span style="font-family: var(--font-serif); font-size: 2rem; color: var(--primary-blue);">B</span>
+                        <h4 style="font-size: 1.25rem; margin: 24px 0 16px 0;">Natural Gas & Market Intelligence</h4>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 24px;">We track fuel markets, storage, LNG flows, and demand signals to guide one of the hardest decisions in procurement — when to enter the market, and when to wait.</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 8px;">◆ Storage & LNG flow monitoring</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 8px;">◆ Demand signal analysis</p>
+                        <p style="color: #0091ff; font-size: 0.85rem; margin-bottom: 32px;">◆ Strategic market timing</p>
+                        <a href="#contact" style="color: var(--primary-blue); text-decoration: none; font-size: 0.9rem; font-weight: bold;">Talk through market timing ➔</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 MARKETS PANEL -->
+    <section id="markets" class="section-block">
+        <div class="layout-container split-grid">
+            <div>
+                <span class="section-number">02</span>
+                <span class="section-tagline">Markets We Cover</span>
+                <h2 class="main-title" style="font-size: 3.5rem; margin-top: 16px;">Three grids. <br><span class="serif-text" style="color: var(--primary-blue);">One disciplined</span> approach.</h2>
+            </div>
+            <div style="padding-top: 60px;">
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 48px;">Each market behaves differently. Our edge is reading them in parallel — not in isolation — and translating that read into concrete contract decisions for our clients.</p>
+                <div style="display: flex; flex-direction: column; gap: 32px;">
+                    <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px;">
+                        <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); float: right;">Texas</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 500;"><span style="color: var(--primary-blue); margin-right: 16px;">01</span> ERCOT</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin-top: 8px; font-size: 0.95rem; max-width: 600px;">The most volatile grid in North America. Scarcity pricing, weather-driven extremes, and basis risk reward operators who plan and punish those who don't.</p>
+                        <span style="color: var(--primary-blue); font-size: 0.75rem; font-weight: bold; display: block; margin-top: 12px; letter-spacing: 1px;">COVERAGE: All ERCOT load zones</span>
+                    </div>
+                    <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px;">
+                        <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); float: right;">Mid-Atlantic</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 500;"><span style="color: var(--primary-blue); margin-right: 16px;">02</span> PJM</h3>
+                        <p style="color: rgba(255,255,255,0.6); margin-top: 8px; font-size: 0.95rem; max-width: 600px;">Capacity, transmission, and a complex stack of products to navigate. We translate the market's complexity into contract structures clients can defend.</p>
+                        <span style="color: var(--primary-blue); font-size: 0.75rem; font-weight: bold; display: block; margin-top: 12px; letter-spacing: 1px;">COVERAGE: PJM zones & hubs</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); float: right;">MISO Region</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 500;"><span style="color: var(--primary-blue); margin-right: 16px;">03</span> Midwest</h3>
