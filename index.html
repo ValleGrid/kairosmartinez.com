@@ -1,33 +1,382 @@
---- index.html
-+++ index.html
-@@
--        <img src="kairos-logo.png" alt="Kairos Martinez" class="nav-logo-img">
-+        <img src="kairos-logo.png" alt="Valle Grid" class="nav-logo-img">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valle Grid | Industrial Procurement & Grid Advisory</title>
 
-@@
--        <a href="#why-kairos">Why Kairos</a>
-+        <a href="#why-valle-grid">Why Valle Grid</a>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-@@
--  <!-- WHY KAIROS -->
--  <section id="why-kairos" class="section-block light-section">
-+  <!-- WHY VALLE GRID -->
-+  <section id="why-valle-grid" class="section-block light-section">
+  <link rel="stylesheet" href="styles.css?v=fubar-reset">
+</head>
 
-@@
--        <span class="section-tagline">Why Kairos</span>
-+        <span class="section-tagline">Why Valle Grid</span>
+<body>
 
-@@
--          Kairos means the right moment. Our discipline is recognizing it before everyone else does,
--          then turning it into a procurement decision clients can defend.
-+          We combine market intelligence, procurement strategy, and risk management
-+          to help clients make energy decisions they can defend.
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
 
-@@
--        <p><a href="#why-kairos" style="color:white; text-decoration:none;">Why Kairos</a></p>
-+        <p><a href="#why-valle-grid" style="color:white; text-decoration:none;">Why Valle Grid</a></p>
+      <div class="logo-wrapper">
+        <img src="kairos-logo.png" alt="Valle Grid" class="nav-logo-img">
+      </div>
 
-@@
--      © 2026 Kairos Martinez. All rights reserved.
-+      © 2026 Valle Grid. All rights reserved.
+      <div class="nav-links">
+        <a href="#what-we-do">What We Do</a>
+        <a href="#markets">Markets</a>
+        <a href="#why-valle-grid">Why Valle Grid</a>
+        <a href="#intelligence">Intelligence</a>
+        <a href="#contact" class="btn-nav-cta">Contact â†’</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-section">
+    <div class="layout-container">
+      <div class="split-grid">
+
+        <div>
+          <div style="display:flex; gap:24px; align-items:center; margin-bottom:32px;">
+            <span class="section-tagline" style="color:var(--primary-blue);">Strategic Energy Procurement</span>
+            <span style="width:52px; height:1px; background:rgba(255,255,255,.15);"></span>
+            <span class="section-tagline">ERCOT Â· PJM Â· Midwest</span>
+          </div>
+
+          <h1 class="main-title">
+            Navigate volatile<br>
+            markets with<br>
+            <span class="serif-text" style="color:var(--primary-blue);">precision.</span>
+          </h1>
+
+          <p style="max-width:640px; color:rgba(255,255,255,.65); font-size:1.15rem;">
+            Valle Grid structures power and natural gas strategy for commercial and industrial clients â€”
+            turning market movement into smarter, defensible procurement decisions.
+          </p>
+
+          <div class="btn-row">
+            <a href="#intelligence" class="btn-solid">Request a Market Read â†’</a>
+            <a href="#what-we-do" class="btn-outline">See What We Do</a>
+          </div>
+        </div>
+
+        <div class="hero-market-panel">
+          <div class="hero-market-item">
+            <span class="hero-market-label">01 / MARKETS</span>
+            <h3>ERCOT, PJM<br>& Midwest</h3>
+          </div>
+
+          <div class="hero-market-item">
+            <span class="hero-market-label">02 / FOCUS</span>
+            <h3>Commercial<br>Procurement</h3>
+          </div>
+
+          <div class="hero-market-item">
+            <span class="hero-market-label">03 / METHOD</span>
+            <h3>Multi-Market<br>Strategy</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- WHAT WE DO -->
+  <section id="what-we-do" class="section-block light-section">
+    <div class="layout-container split-grid">
+
+      <div>
+        <span class="section-number">01</span>
+        <span class="section-tagline">What We Do</span>
+
+        <h2 class="main-title" style="color:var(--text-dark);">
+          Energy strategy<br>
+          <span class="serif-text" style="color:var(--primary-blue);">that moves</span><br>
+          across markets.
+        </h2>
+      </div>
+
+      <div>
+        <p style="color:var(--text-muted); font-size:1.1rem; margin-top:70px;">
+          We advise commercial and industrial buyers on power, natural gas, market timing,
+          and procurement exposure across ERCOT, PJM, and Midwest markets.
+        </p>
+
+        <div class="dark-panel-grid">
+          <div class="dark-grid-card">
+            <span style="font-family:var(--serif); font-size:2.4rem; color:var(--primary-blue);">A</span>
+            <h4>Power Procurement Strategy</h4>
+            <p>
+              We structure energy contracts to reduce exposure, sharpen pricing decisions,
+              and secure long-term positions before volatility prices them out of reach.
+            </p>
+            <br>
+            <p>â—† Contract structuring & timing</p>
+            <p>â—† Risk exposure analysis</p>
+            <p>â—† Forward curve evaluation</p>
+          </div>
+
+          <div class="dark-grid-card">
+            <span style="font-family:var(--serif); font-size:2.4rem; color:var(--primary-blue);">B</span>
+            <h4>Natural Gas & Market Intelligence</h4>
+            <p>
+              We track fuel markets, storage, LNG flows, weather, and demand signals to guide
+              when to enter the market â€” and when to wait.
+            </p>
+            <br>
+            <p>â—† Storage & LNG flow monitoring</p>
+            <p>â—† Demand signal analysis</p>
+            <p>â—† Strategic market timing</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section id="markets" class="section-block">
+    <div class="layout-container">
+
+      <div class="split-grid">
+        <div>
+          <span class="section-number">02</span>
+          <span class="section-tagline">Markets We Cover</span>
+
+          <h2 class="main-title">
+            Three grids.<br>
+            <span class="serif-text" style="color:var(--primary-blue);">One disciplined</span><br>
+            approach.
+          </h2>
+        </div>
+
+        <div>
+          <p style="color:rgba(255,255,255,.75); font-size:1.1rem; margin-top:90px;">
+            Each market behaves differently. Our edge is reading them in parallel â€”
+            not in isolation â€” and translating that read into concrete contract decisions.
+          </p>
+        </div>
+      </div>
+
+      <div class="dark-panel-grid" style="grid-template-columns:repeat(3,1fr); margin-top:70px;">
+        <div class="dark-grid-card">
+          <span class="section-number">01</span>
+          <span class="section-tagline">Texas</span>
+          <h4>ERCOT</h4>
+          <p>The most volatile grid in North America. Scarcity pricing, weather extremes, and basis risk reward operators who plan early.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">02</span>
+          <span class="section-tagline">Mid-Atlantic</span>
+          <h4>PJM</h4>
+          <p>Capacity, transmission, and a complex stack of products to navigate through disciplined procurement strategy.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">03</span>
+          <span class="section-tagline">MISO Region</span>
+          <h4>Midwest</h4>
+          <p>Resource adequacy, seasonal swings, and contract windows that require preparation before the market turns.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY VALLE GRID -->
+  <section id="why-valle-grid" class="section-block light-section">
+    <div class="layout-container split-grid">
+
+      <div>
+        <span class="section-number">03</span>
+        <span class="section-tagline">Why Valle Grid</span>
+
+        <h2 class="main-title" style="color:var(--text-dark);">
+          Experience that<br>
+          <span class="serif-text" style="color:var(--primary-blue);">executes</span> in<br>
+          real markets.
+        </h2>
+
+        <p style="max-width:540px; color:var(--text-muted); font-size:1.05rem;">
+          We combine market intelligence, procurement strategy, and risk management
+          to help clients make energy decisions they can defend.
+        </p>
+      </div>
+
+      <div class="white-stack-panel">
+        <div class="white-stack-item">
+          <h4>i. Multi-market analysis</h4>
+          <p>We read ERCOT, PJM, and the Midwest in parallel because exposure rarely lives in just one market.</p>
+        </div>
+
+        <div class="white-stack-item">
+          <h4>ii. Forward curve discipline</h4>
+          <p>Curves are inputs, not answers. We use them to evaluate timing and identify mispriced risk.</p>
+        </div>
+
+        <div class="white-stack-item">
+          <h4>iii. Strategic timing</h4>
+          <p>When to enter, when to wait, when to layer. Procurement is a sequence of decisions â€” not a single signature.</p>
+        </div>
+
+        <div class="white-stack-item">
+          <h4>iv. Commercial focus</h4>
+          <p>Built for commercial buyers with real exposure, real budgets, and real consequences if the market turns.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTELLIGENCE -->
+  <section id="intelligence" class="section-block">
+    <div class="layout-container">
+
+      <div class="split-grid">
+        <div>
+          <span class="section-number">04</span>
+          <span class="section-tagline">Market Intelligence</span>
+
+          <h2 class="main-title">
+            Turning movement<br>
+            into <span class="serif-text" style="color:var(--primary-blue);">smarter</span> energy<br>
+            decisions.
+          </h2>
+        </div>
+
+        <div>
+          <p style="color:rgba(255,255,255,.75); font-size:1.1rem; margin-top:110px;">
+            Procurement quality compounds with the quality of the read. Hereâ€™s the analytical stack we run for commercial clients.
+          </p>
+        </div>
+      </div>
+
+      <div class="dark-panel-grid" style="grid-template-columns:repeat(3,1fr); margin-top:70px;">
+        <div class="dark-grid-card">
+          <span class="section-number">01</span>
+          <h4>Multi-Markets & Power Analysis</h4>
+          <p>Cross-grid pattern recognition across ERCOT, PJM, and Midwest markets.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">02</span>
+          <h4>Natural Gas Monitoring</h4>
+          <p>Storage, production, LNG, weather, and demand signals that shape tomorrowâ€™s power price.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">03</span>
+          <h4>Commercial Procurement Strategy</h4>
+          <p>Translating the read into a contract structure that fits the client â€” not the other way around.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">04</span>
+          <h4>Forward Curve & Risk Evaluation</h4>
+          <p>Finding where the market is pricing risk â€” and where it may be mispricing it.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span class="section-number">05</span>
+          <h4>Strategic Market Timing</h4>
+          <p>When to lock, when to hedge, and when to wait.</p>
+        </div>
+
+        <div class="dark-grid-card">
+          <span style="font-size:2rem; color:var(--primary-blue);">â†’</span>
+          <h4>Need a market read?</h4>
+          <p>Bring us your contract window. Weâ€™ll show you how the markets are positioned for it.</p>
+          <br>
+          <a href="#contact" style="color:var(--primary-blue); text-decoration:none; font-weight:700;">Request a Read â†’</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-block light-section">
+    <div class="layout-container split-grid">
+
+      <div>
+        <span class="section-number">05</span>
+        <span class="section-tagline">Contact</span>
+
+        <h2 class="main-title" style="color:var(--text-dark);">
+          Understand<br>
+          your exposure<br>
+          <span class="serif-text" style="color:var(--primary-blue);">before</span> your<br>
+          next decision.
+        </h2>
+
+        <p style="color:var(--text-muted); max-width:520px; font-size:1.05rem;">
+          Tell us what market youâ€™re in and whatâ€™s coming up. Weâ€™ll respond with a concrete next step â€”
+          not a sales pitch.
+        </p>
+
+        <div style="margin-top:50px; border-top:1px solid #d8dce0; padding-top:32px;">
+          <span class="section-tagline">Direct</span>
+          <h3 style="font-family:var(--serif); font-size:1.7rem;">info@kairosmartinez.com</h3>
+
+          <br>
+
+          <span class="section-tagline">Based</span>
+          <h3 style="font-family:var(--serif); font-size:1.5rem;">Texas-Based | Serving ERCOT, PJM & Midwest</h3>
+        </div>
+      </div>
+
+      <div class="dark-grid-card">
+        <span class="section-tagline" style="color:var(--primary-blue);">Send a Message</span>
+
+        <form style="margin-top:32px;">
+          <input type="text" placeholder="Your full name" style="width:100%; margin-bottom:20px; padding:16px; background:transparent; border:1px solid rgba(255,255,255,.2); color:white;">
+          <input type="email" placeholder="you@company.com" style="width:100%; margin-bottom:20px; padding:16px; background:transparent; border:1px solid rgba(255,255,255,.2); color:white;">
+          <input type="text" placeholder="Company" style="width:100%; margin-bottom:20px; padding:16px; background:transparent; border:1px solid rgba(255,255,255,.2); color:white;">
+          <textarea placeholder="Market, contract window, current exposure..." rows="6" style="width:100%; margin-bottom:24px; padding:16px; background:transparent; border:1px solid rgba(255,255,255,.2); color:white;"></textarea>
+
+          <button type="submit" class="btn-solid" style="border:none; cursor:pointer;">Send Message â†’</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-wrapper">
+    <div class="footer-grid">
+
+      <div>
+       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+     width="100">>
+        <p style="margin-top:32px; max-width:360px; color:rgba(255,255,255,.65);">
+          Strategic energy procurement and market intelligence for commercial clients across ERCOT, PJM, and the Midwest.
+        </p>
+      </div>
+
+      <div>
+        <span class="section-tagline">Sitemap</span>
+        <p><a href="#what-we-do" style="color:white; text-decoration:none;">What We Do</a></p>
+        <p><a href="#markets" style="color:white; text-decoration:none;">Markets</a></p>
+        <p><a href="#why-valle-grid" style="color:white; text-decoration:none;">Why Valle Grid</a></p>
+        <p><a href="#intelligence" style="color:white; text-decoration:none;">Intelligence</a></p>
+        <p><a href="#contact" style="color:white; text-decoration:none;">Contact</a></p>
+      </div>
+
+      <div>
+        <span class="section-tagline">Contact</span>
+        <h3 style="font-family:var(--serif);">info@kairosmartinez.com</h3>
+        <p style="color:rgba(255,255,255,.55);">Texas-Based | ERCOT Â· PJM Â· Midwest</p>
+      </div>
+
+    </div>
+
+    <div class="layout-container" style="margin-top:70px; color:rgba(255,255,255,.35); font-size:.8rem;">
+      Â© 2026 Valle Grid. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
