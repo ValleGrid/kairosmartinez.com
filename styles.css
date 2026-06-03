@@ -17,8 +17,8 @@
 
     --card-dark:#11141a;
 
-    --primary-blue:#0091ff;
-    --primary-blue-hover:#14a6ff;
+    --primary-blue:#0A74FF;
+    --primary-blue-hover:#2B8CFF;
 
     --text-light:#ffffff;
     --text-dark:#090b0e;
@@ -70,7 +70,7 @@ body{
     letter-spacing:3px;
     font-size:.72rem;
 
-    color:var(--text-muted);
+    color:var(--primary-blue);
     font-weight:700;
 }
 
@@ -155,7 +155,7 @@ body{
 
 .nav-links a:hover{
 
-    color:white;
+    color:var(--primary-blue);
 }
 
 .btn-nav-cta{
@@ -167,6 +167,12 @@ body{
     padding:14px 24px;
 
     border-radius:4px;
+}
+
+.btn-nav-cta:hover{
+
+    background:var(--primary-blue-hover);
+    color:white;
 }
 
 /* ==========================================
@@ -389,6 +395,18 @@ body{
 .btn-outline:hover{
 
     background:rgba(255,255,255,.05);
+    border-color:var(--primary-blue);
+    color:var(--primary-blue);
+}
+
+.dark-grid-card a{
+
+    color:var(--primary-blue) !important;
+}
+
+.footer-grid a:hover{
+
+    color:var(--primary-blue) !important;
 }
 
 /* ==========================================
