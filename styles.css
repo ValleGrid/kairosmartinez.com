@@ -1,7 +1,4 @@
-/* ==========================================================================
-   KAIROS ENERGY ARCHITECTURE - MASTER STYLESHEET
-   ========================================================================== */
-
+/* GLOBAL DESIGN SPECIFICATIONS */
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* TYPOGRAPHY COMPONENTS */
+/* TYPOGRAPHY BLOCKS */
 .serif-text {
   font-family: var(--font-serif);
   font-style: italic;
@@ -42,31 +39,30 @@ body {
 
 .section-number {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: var(--primary-blue);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .section-tagline {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--text-muted);
   font-weight: 700;
-  display: inline-block;
 }
 
 .main-title {
   font-family: var(--font-sans);
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -2px;
   margin-bottom: 24px;
 }
 
-/* NAVIGATION HEAD BAR */
+/* NAVIGATION HEADER BAR */
 .navbar {
   background-color: rgba(9, 11, 14, 0.95);
   position: fixed;
@@ -80,9 +76,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 40px;
   height: 90px;
 }
 
@@ -95,18 +91,18 @@ body {
 }
 
 .nav-logo-img {
-  height: 46px;
+  height: 50px;
   width: auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
@@ -124,15 +120,16 @@ body {
   padding: 12px 24px;
   border-radius: 4px;
   font-weight: 600;
+  transition: background-color 0.2s;
 }
 
 .btn-nav-cta:hover {
   background-color: var(--accent-blue);
 }
 
-/* LAYOUT CONTAINER SYSTEM */
+/* CONTAINER LAYOUT UNITS */
 .section-block {
-  padding: 140px 0;
+  padding: 120px 0;
 }
 
 .light-section {
@@ -141,57 +138,60 @@ body {
 }
 
 .layout-container {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 40px;
 }
 
 .split-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 96px;
+  gap: 80px;
   align-items: flex-start;
 }
 
-/* PRACTICE AREA CARDS (SEC 01) */
-.practice-card {
-  background: var(--bg-card-dark);
-  color: #ffffff;
-  padding: 48px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 380px;
+/* PRACTICE CARDS BLOCK A & B */
+.practice-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
 
-.bullet-list {
+.practice-card {
+  background: var(--bg-card-dark);
+  color: var(--text-light);
+  padding: 48px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.diamond-list {
   list-style: none;
   margin: 32px 0;
 }
 
-.bullet-list li {
+.diamond-list li {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.bullet-diamond {
+.diamond-list li::before {
+  content: "♦";
   color: var(--primary-blue);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .card-action-link {
   color: var(--primary-blue);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  border-bottom: 1px solid rgba(0, 145, 255, 0.2);
+  border-bottom: 1px solid rgba(0,145,255,0.2);
   padding-bottom: 4px;
-  width: fit-content;
   transition: border-color 0.2s;
 }
 
@@ -199,61 +199,41 @@ body {
   border-color: var(--primary-blue);
 }
 
-/* MARKETS GRID COMPONENT (SEC 02) */
-.three-market-row {
+/* GRID PANELS SECTION 02 & 04 */
+.market-row-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  margin-top: 64px;
 }
 
-.market-panel-card {
+.market-panel {
   background: var(--bg-card-dark);
+  border: 1px solid rgba(255,255,255,0.05);
   padding: 40px;
   border-radius: 4px;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 320px;
 }
 
-.market-meta-label {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  font-size: 0.55rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.3);
-  font-weight: 700;
+.dark-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.market-coverage-tag {
-  margin-top: 32px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.dark-grid-card {
+  background-color: var(--bg-card-dark);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.02);
+  border-radius: 4px;
 }
 
-.market-coverage-tag span {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  color: var(--primary-blue);
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.market-coverage-tag p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 4px;
-}
-
-/* WHY KAIROS ACCORDION MATRIX (SEC 03) */
+/* WHITE STACK SECTION 03 */
 .white-stack-panel {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .white-stack-item {
@@ -263,121 +243,50 @@ body {
   margin-bottom: -1px;
 }
 
-.white-stack-item h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.white-stack-item p {
-  color: var(--text-muted);
-  margin-top: 8px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* MATRIX PATTERN GRID (SEC 04) */
-.dark-panel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.dark-grid-card {
-  background-color: var(--bg-dark);
-  padding: 40px;
-  min-height: 240px;
-  display: flex;
-  flex-direction: column;
-}
-
-.dark-grid-card.action-cell {
-  background-color: var(--bg-card-dark);
-  justify-content: space-between;
-}
-
-/* PREMIUM INTERACTIVE FORM (SEC 05) */
-.premium-form-panel {
-  background: #090b0e;
-  padding: 56px;
-  border-radius: 4px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-}
-
-.form-row-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-bottom: 32px;
-}
-
-.form-group-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group-field label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin-bottom: 12px;
-}
-
-.form-group-field input,
-.form-group-field textarea {
+/* FORM ELEMENTS */
+.form-input-field {
+  width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 8px 0;
-  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 12px 0;
+  color: #fff;
   outline: none;
+  font-size: 1rem;
   font-family: var(--font-sans);
-  font-size: 0.95rem;
   transition: border-color 0.2s;
 }
 
-.form-group-field input:focus,
-.form-group-field textarea:focus {
+.form-input-field:focus {
   border-color: var(--primary-blue);
 }
 
-.selector-pill-row {
+.chip-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: 12px;
 }
 
-.filter-selector-pill {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 10px 18px;
-  font-size: 0.8rem;
+.chip {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 20px;
+  font-size: 0.85rem;
   border-radius: 4px;
   cursor: pointer;
-  color: #ffffff;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  color: #fff;
+  transition: all 0.2s;
 }
 
-.filter-selector-pill:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.filter-selector-pill.active {
+.chip:hover {
   border-color: var(--primary-blue);
   color: var(--primary-blue);
 }
 
-/* INTERACTIVE ACTION ELEMENTS */
+/* BUTTONS */
 .btn-row {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   margin-top: 40px;
 }
 
@@ -389,64 +298,44 @@ body {
   font-weight: 600;
   border-radius: 4px;
   font-size: 0.9rem;
-  display: inline-block;
-  transition: background-color 0.2s;
-}
-
-.btn-solid:hover {
-  background-color: var(--accent-blue);
+  text-align: center;
 }
 
 .btn-outline {
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
   text-decoration: none;
   padding: 16px 32px;
   font-weight: 600;
   border-radius: 4px;
   font-size: 0.9rem;
-  display: inline-block;
-  transition: border-color 0.2s;
+  text-align: center;
 }
 
-.btn-outline:hover {
-  border-color: #ffffff;
-}
-
-/* MASTER FOOTER PANELS */
+/* FOOTER SETUP */
 .footer-wrapper {
-  background-color: var(--bg-dark);
-  padding: 96px 0 48px 0;
+  background-color: #050608;
+  padding: 80px 0 40px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 80px;
-  margin-bottom: 64px;
+  gap: 64px;
+  margin-bottom: 60px;
 }
 
-/* RESPONSIVE LAYOUT MATRIX */
-@media (max-width: 1200px) {
-  .dark-panel-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* RESPONSIVE DESIGN BREAKPOINTS */
+@media (max-width: 1024px) {
+  .split-grid, .market-row-grid, .dark-panel-grid, .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
   }
-}
-
-@media (max-width: 992px) {
-  .split-grid, .footer-grid, .three-market-row {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .dark-panel-grid {
+  .practice-card-grid {
     grid-template-columns: 1fr;
   }
   .main-title {
     font-size: 2.8rem;
-  }
-  .form-row-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
   }
 }
