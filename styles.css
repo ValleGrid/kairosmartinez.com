@@ -113,7 +113,7 @@ body{
 
     padding:0 80px;
 
-    height:86px;
+    height: 110px;
 
     display:flex;
     justify-content:space-between;
@@ -129,7 +129,7 @@ body{
 }
 
 .nav-logo-img {
-    height: 90px;
+    height: 100px;
     width: auto;
     display: block;
 }
