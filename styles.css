@@ -306,6 +306,23 @@ body{
     color:var(--text-dark);
 }
 
+.capabilities-section{
+
+    background:var(--bg-dark);
+
+    color:var(--text-light);
+}
+
+.capabilities-section .main-title{
+
+    color:var(--text-light);
+}
+
+.capabilities-section .dark-grid-card{
+
+    border-color:rgba(255,255,255,.08);
+}
+
 /* ==========================================
    CARDS
 ========================================== */
