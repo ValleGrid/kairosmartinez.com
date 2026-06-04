@@ -236,7 +236,7 @@ body{
     rgba(5,9,14,.08) 0%,
     rgba(5,9,14,.28) 100%
     ),
-    url("images/hero-industrial-energy.png");
+    url("hero-industrial-energy.png");
 
     background-size:cover;
     background-position:center right;
