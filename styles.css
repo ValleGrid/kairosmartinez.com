@@ -205,9 +205,10 @@ body{
 
 .hero{
 
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: #03080c;
 }
 
 .hero .layout-container{
@@ -218,23 +219,23 @@ body{
 
 .hero-image-layer{
 
-    position:absolute;
-    inset:0;
-    z-index:-2;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
 
     background-image:
     linear-gradient(
     90deg,
-    rgba(3,8,12,.92) 0%,
-    rgba(3,8,12,.55) 28%,
-    rgba(3,8,12,.10) 60%,
-    rgba(3,8,12,.02) 100%
+    rgba(3, 8, 12, 0.94) 0%,
+    rgba(3, 8, 12, 0.76) 30%,
+    rgba(3, 8, 12, 0.28) 58%,
+    rgba(3, 8, 12, 0.05) 100%
     ),
     url("hero-industrial-energy.png");
 
-    background-repeat:no-repeat;
-    background-position:right center;
-    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .hero::after{
@@ -243,17 +244,23 @@ body{
 
     position:absolute;
     inset:0;
+    z-index:-1;
 
     background:
-    linear-gradient(
-    90deg,
-    var(--bg-dark) 0%,
-    rgba(5,9,14,.92) 42%,
-    rgba(7,27,51,.58) 100%
-    );
+    radial-gradient(circle at 75% 35%, rgba(10, 116, 255, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(3, 8, 12, 0.08), rgba(3, 8, 12, 0.18));
 
     pointer-events:none;
-    z-index:1;
+}
+
+.hero-content,
+.hero-grid,
+.hero-copy,
+.hero-panel,
+.hero-actions{
+
+    position: relative;
+    z-index: 2;
 }
 
 .section-block{
@@ -318,25 +325,6 @@ body{
     font-weight:500;
 
     line-height:1.15;
-}
-
-.hero-hover-details{
-
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-
-    margin-top:0;
-
-    transition:.25s;
-}
-
-.hero-market-item:hover .hero-hover-details{
-
-    max-height:260px;
-    opacity:1;
-
-    margin-top:18px;
 }
 
 .hero-hover-details p{
@@ -720,18 +708,16 @@ body{
    MOBILE
 ========================================== */
 
-@media(max-width:992px){
+@media (max-width: 768px) {
 
     .hero-image-layer{
 
-        background-position:center;
-        opacity:.28;
+        opacity: 0.35;
+        background-position: center right;
     }
+}
 
-    .hero::after{
-
-        background:rgba(5,9,14,.86);
-    }
+@media(max-width:992px){
 
     .split-grid{
         grid-template-columns:1fr;
