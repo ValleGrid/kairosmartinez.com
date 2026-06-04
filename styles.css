@@ -187,28 +187,14 @@ body{
     padding-top:180px;
     padding-bottom:120px;
 
-    background:
-
-    radial-gradient(
-    circle at 82% 30%,
-    rgba(10,116,255,.18),
-    transparent 30%
-    ),
-
-    linear-gradient(
-    120deg,
-    var(--bg-dark) 0%,
-    var(--bg-dark) 50%,
-    var(--bg-dark-alt) 100%
-    );
+    background:#03080c;
 }
 
 .hero{
 
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    background: #03080c;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
 }
 
 .hero .layout-container{
@@ -219,23 +205,24 @@ body{
 
 .hero-image-layer{
 
-    position: absolute;
-    inset: 0;
-    z-index: -2;
+    position:absolute;
+    inset:0;
 
-    background-image:
+    z-index:-2;
+
+    background:
     linear-gradient(
     90deg,
-    rgba(3, 8, 12, 0.94) 0%,
-    rgba(3, 8, 12, 0.76) 30%,
-    rgba(3, 8, 12, 0.28) 58%,
-    rgba(3, 8, 12, 0.05) 100%
+    rgba(3,8,12,.94) 0%,
+    rgba(3,8,12,.76) 30%,
+    rgba(3,8,12,.28) 58%,
+    rgba(3,8,12,.05) 100%
     ),
     url("hero-industrial-energy.png");
 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
 }
 
 .hero::after{
@@ -247,20 +234,34 @@ body{
     z-index:-1;
 
     background:
-    radial-gradient(circle at 75% 35%, rgba(10, 116, 255, 0.16), transparent 34%),
-    linear-gradient(180deg, rgba(3, 8, 12, 0.08), rgba(3, 8, 12, 0.18));
+    radial-gradient(circle at 75% 35%, rgba(10,116,255,.16), transparent 34%),
+    linear-gradient(180deg, rgba(3,8,12,.08), rgba(3,8,12,.18));
 
     pointer-events:none;
 }
 
-.hero-content,
-.hero-grid,
+.hero-grid{
+
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+    1.1fr
+    .9fr;
+
+    gap:90px;
+
+    align-items:start;
+}
+
 .hero-copy,
 .hero-panel,
 .hero-actions{
 
-    position: relative;
-    z-index: 2;
+    position:relative;
+    z-index:2;
 }
 
 .section-block{
@@ -700,7 +701,8 @@ body{
 
 @media(max-width:992px){
 
-    .split-grid{
+    .split-grid,
+    .hero-grid{
         grid-template-columns:1fr;
         gap:60px;
     }
