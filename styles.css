@@ -203,6 +203,68 @@ body{
     );
 }
 
+.hero{
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero .layout-container{
+
+    position:relative;
+    z-index:2;
+}
+
+.hero-image-layer{
+
+    position:absolute;
+    inset:0 0 0 auto;
+
+    width:62%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--bg-dark) 0%,
+    rgba(5,9,14,.88) 24%,
+    rgba(5,9,14,.45) 54%,
+    rgba(5,9,14,.08) 100%
+    ),
+    linear-gradient(
+    180deg,
+    rgba(5,9,14,.08) 0%,
+    rgba(5,9,14,.28) 100%
+    ),
+    url("images/hero-industrial-energy.png");
+
+    background-size:cover;
+    background-position:center right;
+    background-repeat:no-repeat;
+
+    opacity:.72;
+    z-index:0;
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--bg-dark) 0%,
+    rgba(5,9,14,.92) 42%,
+    rgba(7,27,51,.58) 100%
+    );
+
+    pointer-events:none;
+    z-index:1;
+}
+
 .section-block{
 
     padding:120px 0;
@@ -668,6 +730,19 @@ body{
 ========================================== */
 
 @media(max-width:992px){
+
+    .hero-image-layer{
+
+        width:100%;
+        opacity:.18;
+
+        background-position:center;
+    }
+
+    .hero::after{
+
+        background:rgba(5,9,14,.86);
+    }
 
     .split-grid{
         grid-template-columns:1fr;
