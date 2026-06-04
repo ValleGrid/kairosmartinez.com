@@ -352,6 +352,42 @@ body{
     flex-direction:column;
 }
 
+.edge-card-grid{
+
+    grid-template-columns:repeat(3,1fr);
+    margin-top:70px;
+}
+
+.edge-card,
+.terminal-card{
+
+    position:relative;
+}
+
+.accent-dot{
+
+    width:10px;
+    height:10px;
+
+    display:block;
+
+    background:var(--primary-blue);
+    border-radius:50%;
+
+    margin-bottom:24px;
+}
+
+.terminal-grid{
+
+    grid-template-columns:repeat(3,1fr);
+    margin-top:70px;
+}
+
+.terminal-card{
+
+    border-color:rgba(10,116,255,.22);
+}
+
 .dark-grid-card{
 
     background:#090b0e;
@@ -512,6 +548,11 @@ body{
     }
 
     .dark-panel-grid{
+        grid-template-columns:1fr;
+    }
+
+    .edge-card-grid,
+    .terminal-grid{
         grid-template-columns:1fr;
     }
 
