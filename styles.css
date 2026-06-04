@@ -205,7 +205,23 @@ body{
 
 .hero-image-layer{
 
-    display:none;
+    position:absolute;
+    inset:0;
+    z-index:-2;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(3,8,12,.96) 0%,
+    rgba(3,8,12,.82) 34%,
+    rgba(3,8,12,.32) 64%,
+    rgba(3,8,12,.08) 100%
+    ),
+    url("hero-industrial-energy.png");
+
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
 }
 
 .hero::after{
