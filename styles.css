@@ -825,17 +825,17 @@ body{
 .section-hero-image{
     position:relative;
     width:100%;
-    margin:0 0 60px;
+    margin:0 0 70px;
     overflow:hidden;
     border-radius:20px;
-    border:1px solid rgba(10,116,255,.18);
+    border:1px solid rgba(10,116,255,.22);
     background:#050d1a;
 }
 
 .section-hero-image img{
     display:block;
     width:100%;
-    height:520px;
+    height:440px;
     object-fit:cover;
 }
 
@@ -843,12 +843,11 @@ body{
     content:"";
     position:absolute;
     inset:0;
-    background:
-    linear-gradient(
+    background:linear-gradient(
         180deg,
         rgba(2,11,22,.05) 0%,
-        rgba(2,11,22,.35) 50%,
-        rgba(2,11,22,.88) 100%
+        rgba(2,11,22,.35) 45%,
+        rgba(2,11,22,.92) 100%
     );
 }
 
@@ -857,13 +856,13 @@ body{
     left:48px;
     bottom:42px;
     z-index:2;
-    max-width:700px;
+    max-width:720px;
 }
 
 .section-hero-overlay span{
     display:block;
     color:#0A74FF;
-    font-size:.8rem;
+    font-size:.78rem;
     font-weight:700;
     letter-spacing:.18em;
     text-transform:uppercase;
@@ -873,15 +872,20 @@ body{
 .section-hero-overlay h2{
     margin:0;
     color:#ffffff;
-    font-size:clamp(2rem,4vw,3.5rem);
+    font-size:clamp(2rem,4vw,3.3rem);
     line-height:1.05;
     font-weight:700;
 }
 
 @media(max-width:768px){
 
+    .section-hero-image{
+        margin-bottom:48px;
+        border-radius:14px;
+    }
+
     .section-hero-image img{
-        height:340px;
+        height:320px;
     }
 
     .section-hero-overlay{
@@ -891,6 +895,6 @@ body{
     }
 
     .section-hero-overlay h2{
-        font-size:1.8rem;
+        font-size:1.75rem;
     }
 }
