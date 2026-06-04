@@ -708,15 +708,6 @@ body{
    MOBILE
 ========================================== */
 
-@media (max-width: 768px) {
-
-    .hero-image-layer{
-
-        opacity: 0.35;
-        background-position: center right;
-    }
-}
-
 @media(max-width:992px){
 
     .split-grid{
