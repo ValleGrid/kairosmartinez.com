@@ -244,10 +244,10 @@ body{
     linear-gradient(28deg, transparent 0 43%, rgba(10,116,255,.075) 43.15% 43.35%, transparent 43.55% 100%),
     linear-gradient(152deg, transparent 0 52%, rgba(43,140,255,.065) 52.15% 52.36%, transparent 52.56% 100%);
 
-    opacity:.13;
-    filter:drop-shadow(0 0 7px rgba(10,116,255,.28));
+    opacity:.22;
+    filter:drop-shadow(0 0 12px rgba(10,116,255,.45));
 
-    animation:hero-data-mesh 18s linear infinite;
+    animation:hero-data-mesh 12s linear infinite;
 }
 
 .hero-image-layer::after{
@@ -265,7 +265,7 @@ body{
     radial-gradient(circle at 52% 68%, rgba(10,116,255,.07), transparent 14%),
     linear-gradient(100deg, transparent 0 58%, rgba(255,255,255,.035) 66%, transparent 78%);
 
-    opacity:.14;
+    opacity:.24;
     mix-blend-mode:screen;
 
     animation:hero-refinery-flicker 20s ease-in-out infinite;
@@ -286,19 +286,19 @@ body{
 
     0%,
     100%{
-        opacity:.1;
+        opacity:.18;
     }
 
     45%{
-        opacity:.15;
+        opacity:.28;
     }
 
     63%{
-        opacity:.12;
+        opacity:.22;
     }
 
     78%{
-        opacity:.17;
+        opacity:.32;
     }
 }
 
