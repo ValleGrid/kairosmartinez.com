@@ -235,8 +235,8 @@ body{
     width:16px;
     height:16px;
 
-    left:38%;
-    top:68%;
+    left:2%;
+    top:23%;
 
     border-radius:50%;
 
@@ -255,7 +255,7 @@ body{
 
     opacity:.9;
 
-    offset-path:path("M 0 0 L 82 82 L 170 18 L 248 104 L 340 22 L 435 86 L 540 150 L 650 96");
+    offset-path:path("M 0 0 L 105 86 L 214 18 L 322 114 L 430 34 L 540 132 L 650 194 L 760 138");
     offset-rotate:0deg;
 
     animation:hero-energy-pulse 4.5s linear infinite;
