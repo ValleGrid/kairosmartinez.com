@@ -223,6 +223,77 @@ body{
     background-position:65% center;
     background-size:cover;
     filter:brightness(1.1);
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.hero-image-layer::before{
+
+    content:"";
+
+    position:absolute;
+    inset:-12% -20%;
+
+    background:
+    radial-gradient(circle, rgba(10,116,255,.52) 0 2px, transparent 3px) 0 0 / 190px 130px,
+    radial-gradient(circle, rgba(43,140,255,.38) 0 1.5px, transparent 3px) 70px 42px / 230px 150px,
+    linear-gradient(105deg, transparent 0 28%, rgba(10,116,255,.14) 28.2% 28.55%, transparent 28.75% 100%),
+    linear-gradient(24deg, transparent 0 34%, rgba(10,116,255,.11) 34.2% 34.45%, transparent 34.65% 100%),
+    linear-gradient(156deg, transparent 0 44%, rgba(43,140,255,.09) 44.15% 44.4%, transparent 44.6% 100%);
+
+    opacity:.18;
+    filter:drop-shadow(0 0 8px rgba(10,116,255,.35));
+
+    animation:hero-data-mesh 18s linear infinite;
+}
+
+.hero-image-layer::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 79% 34%, rgba(43,140,255,.16), transparent 12%),
+    radial-gradient(circle at 72% 57%, rgba(10,116,255,.1), transparent 10%),
+    linear-gradient(100deg, transparent 0 64%, rgba(255,255,255,.06) 68%, transparent 76%);
+
+    opacity:.22;
+    mix-blend-mode:screen;
+
+    animation:hero-refinery-flicker 20s ease-in-out infinite;
+}
+
+@keyframes hero-data-mesh{
+
+    0%{
+        transform:translateX(-4%);
+    }
+
+    100%{
+        transform:translateX(4%);
+    }
+}
+
+@keyframes hero-refinery-flicker{
+
+    0%,
+    100%{
+        opacity:.16;
+    }
+
+    45%{
+        opacity:.24;
+    }
+
+    63%{
+        opacity:.19;
+    }
+
+    78%{
+        opacity:.26;
+    }
 }
 
 .hero::after{
