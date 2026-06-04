@@ -226,10 +226,10 @@ body{
     background:
     linear-gradient(
     90deg,
-    var(--bg-dark) 0%,
-    rgba(5,9,14,.88) 24%,
-    rgba(5,9,14,.45) 54%,
-    rgba(5,9,14,.08) 100%
+    rgba(3,8,12,.92) 0%,
+    rgba(3,8,12,.65) 32%,
+    rgba(3,8,12,.18) 62%,
+    rgba(3,8,12,.05) 100%
     ),
     linear-gradient(
     180deg,
