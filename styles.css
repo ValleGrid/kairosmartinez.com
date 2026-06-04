@@ -232,17 +232,20 @@ body{
     content:"";
 
     position:absolute;
-    inset:-12% -20%;
+    left:48%;
+    right:-12%;
+    top:34%;
+    bottom:-8%;
 
     background:
-    radial-gradient(circle, rgba(10,116,255,.52) 0 2px, transparent 3px) 0 0 / 190px 130px,
-    radial-gradient(circle, rgba(43,140,255,.38) 0 1.5px, transparent 3px) 70px 42px / 230px 150px,
-    linear-gradient(105deg, transparent 0 28%, rgba(10,116,255,.14) 28.2% 28.55%, transparent 28.75% 100%),
-    linear-gradient(24deg, transparent 0 34%, rgba(10,116,255,.11) 34.2% 34.45%, transparent 34.65% 100%),
-    linear-gradient(156deg, transparent 0 44%, rgba(43,140,255,.09) 44.15% 44.4%, transparent 44.6% 100%);
+    radial-gradient(circle, rgba(10,116,255,.42) 0 1.8px, transparent 3px) 18px 20px / 180px 120px,
+    radial-gradient(circle, rgba(43,140,255,.28) 0 1.4px, transparent 3px) 84px 68px / 230px 145px,
+    linear-gradient(108deg, transparent 0 31%, rgba(10,116,255,.09) 31.15% 31.38%, transparent 31.55% 100%),
+    linear-gradient(28deg, transparent 0 43%, rgba(10,116,255,.075) 43.15% 43.35%, transparent 43.55% 100%),
+    linear-gradient(152deg, transparent 0 52%, rgba(43,140,255,.065) 52.15% 52.36%, transparent 52.56% 100%);
 
-    opacity:.18;
-    filter:drop-shadow(0 0 8px rgba(10,116,255,.35));
+    opacity:.13;
+    filter:drop-shadow(0 0 7px rgba(10,116,255,.28));
 
     animation:hero-data-mesh 18s linear infinite;
 }
@@ -252,14 +255,17 @@ body{
     content:"";
 
     position:absolute;
-    inset:0;
+    left:55%;
+    right:0;
+    top:36%;
+    bottom:0;
 
     background:
-    radial-gradient(circle at 79% 34%, rgba(43,140,255,.16), transparent 12%),
-    radial-gradient(circle at 72% 57%, rgba(10,116,255,.1), transparent 10%),
-    linear-gradient(100deg, transparent 0 64%, rgba(255,255,255,.06) 68%, transparent 76%);
+    radial-gradient(circle at 68% 44%, rgba(43,140,255,.09), transparent 16%),
+    radial-gradient(circle at 52% 68%, rgba(10,116,255,.07), transparent 14%),
+    linear-gradient(100deg, transparent 0 58%, rgba(255,255,255,.035) 66%, transparent 78%);
 
-    opacity:.22;
+    opacity:.14;
     mix-blend-mode:screen;
 
     animation:hero-refinery-flicker 20s ease-in-out infinite;
@@ -268,11 +274,11 @@ body{
 @keyframes hero-data-mesh{
 
     0%{
-        transform:translateX(-4%);
+        transform:translateX(-3%);
     }
 
     100%{
-        transform:translateX(4%);
+        transform:translateX(3%);
     }
 }
 
@@ -280,19 +286,19 @@ body{
 
     0%,
     100%{
-        opacity:.16;
+        opacity:.1;
     }
 
     45%{
-        opacity:.24;
+        opacity:.15;
     }
 
     63%{
-        opacity:.19;
+        opacity:.12;
     }
 
     78%{
-        opacity:.26;
+        opacity:.17;
     }
 }
 
