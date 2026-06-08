@@ -147,6 +147,7 @@ body{
     position:absolute;
     inset:0;
     z-index:-2;
+
     background:
     linear-gradient(
         90deg,
@@ -156,14 +157,15 @@ body{
         rgba(3,8,12,.08) 100%
     ),
     url("hero image.png");
+
     background-repeat:no-repeat;
-    background-position:65% center;
+    background-position:64% center;
     background-size:cover;
     filter:brightness(1.1);
     overflow:hidden;
     pointer-events:none;
-    animation:hero-cloud-drift 28s ease-in-out infinite alternate;
-    transform-origin:center;
+
+    animation:hero-cloud-drift 18s ease-in-out infinite alternate;
 }
 
 .hero::before{
@@ -212,10 +214,11 @@ body{
 
 @keyframes hero-cloud-drift{
     0%{
-        transform:scale(1.015) translateX(0);
+        transform:scale(1.03) translateX(0) translateY(0);
     }
+
     100%{
-        transform:scale(1.025) translateX(-14px);
+        transform:scale(1.06) translateX(-28px) translateY(-8px);
     }
 }
 
@@ -234,74 +237,12 @@ body{
 .hero::after{
     content:"";
     position:absolute;
-    right:0;
-    bottom:0;
-    width:58%;
-    height:42%;
-    z-index:1;
+    inset:0;
+    z-index:-1;
     pointer-events:none;
     background:
-        linear-gradient(100deg, transparent 0%, rgba(10,116,255,.08) 42%, rgba(43,140,255,.28) 50%, rgba(10,116,255,.08) 58%, transparent 100%);
-    mix-blend-mode:screen;
-    opacity:.38;
-    transform:translateX(-120%);
-    animation:hero-bar-sweep 9s ease-in-out infinite;
-}
-
-.hero-pulse-line{
-    position:absolute;
-    left:28%;
-    bottom:18%;
-    width:48%;
-    height:24%;
-    z-index:1;
-    pointer-events:none;
-    background:
-        radial-gradient(circle, rgba(91,216,255,.75) 0 5px, rgba(10,116,255,.25) 8px, transparent 18px);
-    opacity:.75;
-    filter:blur(.2px) drop-shadow(0 0 16px rgba(10,116,255,.65));
-    animation:hero-forward-pulse 8s ease-in-out infinite;
-}
-
-@keyframes hero-bar-sweep{
-    0%, 68%{
-        opacity:0;
-        transform:translateX(-120%);
-    }
-    76%{
-        opacity:.35;
-    }
-    100%{
-        opacity:0;
-        transform:translateX(95%);
-    }
-}
-
-@keyframes hero-forward-pulse{
-    0%{
-        transform:translate(0, 0);
-        opacity:0;
-    }
-    14%{
-        opacity:.75;
-    }
-    32%{
-        transform:translate(120px, -80px);
-    }
-    48%{
-        transform:translate(250px, 8px);
-    }
-    64%{
-        transform:translate(390px, -58px);
-    }
-    82%{
-        transform:translate(545px, 70px);
-        opacity:.75;
-    }
-    100%{
-        transform:translate(650px, 24px);
-        opacity:0;
-    }
+    radial-gradient(circle at 75% 35%, rgba(10,116,255,.16), transparent 34%),
+    linear-gradient(180deg, rgba(3,8,12,.08), rgba(3,8,12,.18));
 }
 
 .layout-container{
