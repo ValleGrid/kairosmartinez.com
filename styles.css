@@ -164,9 +164,6 @@ body{
     filter:brightness(1.1);
     overflow:hidden;
     pointer-events:none;
-
-    animation:none !important;
-    transform:none !important;
 }
 
 .hero::before{
@@ -183,46 +180,6 @@ body{
         radial-gradient(circle, rgba(10,116,255,.30) 0 1.4px, transparent 3px) 0 0 / 90px 52px;
 
     opacity:.08;
-    mix-blend-mode:screen;
-    filter:drop-shadow(0 0 8px rgba(10,116,255,.18));
-
-    animation:hero-mesh-flow 8s linear infinite;
-}
-
-.hero-image-layer::after{
-    content:"";
-    position:absolute;
-    left:55%;
-    right:0;
-    top:36%;
-    bottom:0;
-    background:
-    radial-gradient(circle at 68% 44%, rgba(43,140,255,.09), transparent 16%),
-    radial-gradient(circle at 52% 68%, rgba(10,116,255,.07), transparent 14%),
-    linear-gradient(100deg, transparent 0 58%, rgba(255,255,255,.035) 66%, transparent 78%);
-    opacity:.24;
-    mix-blend-mode:screen;
-    animation:hero-refinery-flicker 20s ease-in-out infinite;
-}
-
-@keyframes hero-refinery-flicker{
-    0%,
-    100%{ opacity:.18; }
-    45%{ opacity:.28; }
-    63%{ opacity:.22; }
-    78%{ opacity:.32; }
-}
-
-@keyframes hero-mesh-flow{
-    0%{
-        transform:translateX(-3%);
-        background-position:0 0;
-    }
-
-    100%{
-        transform:translateX(3%);
-        background-position:140px 0;
-    }
 }
 
 .hero::after{
@@ -236,55 +193,6 @@ body{
     linear-gradient(180deg, rgba(3,8,12,.04), rgba(3,8,12,.14));
 
     pointer-events:none;
-}
-
-.hero-node-sequence{
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-}
-
-.hero-node{
-    position:absolute;
-    width:18px;
-    height:18px;
-    border-radius:50%;
-    background:rgba(91,216,255,.95);
-    box-shadow:
-        0 0 12px rgba(91,216,255,.95),
-        0 0 28px rgba(10,116,255,.75),
-        0 0 44px rgba(10,116,255,.45);
-    opacity:.15;
-    transform:translate(-50%, -50%) scale(.65);
-    animation:hero-node-flash 1.6s linear infinite;
-}
-
-.node-1{ left:28%; top:68%; animation-delay:0s; }
-.node-2{ left:34%; top:62%; animation-delay:.16s; }
-.node-3{ left:39%; top:72%; animation-delay:.32s; }
-.node-4{ left:45%; top:66%; animation-delay:.48s; }
-.node-5{ left:52%; top:79%; animation-delay:.64s; }
-.node-6{ left:60%; top:70%; animation-delay:.80s; }
-.node-7{ left:68%; top:80%; animation-delay:.96s; }
-.node-8{ left:77%; top:88%; animation-delay:1.12s; }
-
-@keyframes hero-node-flash{
-    0%,
-    100%{
-        opacity:.12;
-        transform:translate(-50%, -50%) scale(.65);
-    }
-
-    12%{
-        opacity:1;
-        transform:translate(-50%, -50%) scale(1.22);
-    }
-
-    24%{
-        opacity:.25;
-        transform:translate(-50%, -50%) scale(.82);
-    }
 }
 
 .layout-container{
