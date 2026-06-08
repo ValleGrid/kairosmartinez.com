@@ -167,20 +167,21 @@ body{
 .hero::before{
     content:"";
     position:absolute;
-    left:18%;
+    left:0;
     right:0;
-    top:58%;
+    top:62%;
     bottom:-8%;
     z-index:-1;
     pointer-events:none;
+
     background:
-        radial-gradient(circle, rgba(10,116,255,.34) 0 1.5px, transparent 3px) 0 0 / 90px 52px,
-        linear-gradient(18deg, transparent 0 48%, rgba(10,116,255,.10) 48.2% 48.45%, transparent 48.7% 100%),
-        linear-gradient(162deg, transparent 0 52%, rgba(43,140,255,.08) 52.15% 52.42%, transparent 52.7% 100%);
-    opacity:.18;
+        radial-gradient(circle, rgba(10,116,255,.28) 0 1.4px, transparent 3px) 0 0 / 90px 52px;
+
+    opacity:.10;
     mix-blend-mode:screen;
-    filter:drop-shadow(0 0 8px rgba(10,116,255,.25));
-    animation:hero-mesh-flow 7s linear infinite;
+    filter:drop-shadow(0 0 8px rgba(10,116,255,.18));
+
+    animation:hero-mesh-flow 9s linear infinite;
 }
 
 .hero-image-layer::after{
@@ -209,12 +210,13 @@ body{
 
 @keyframes hero-mesh-flow{
     0%{
-        transform:translateX(-8%);
-        background-position:0 0, 0 0, 0 0;
+        transform:translateX(-4%);
+        background-position:0 0;
     }
+
     100%{
-        transform:translateX(8%);
-        background-position:180px 0, 140px 0, 140px 0;
+        transform:translateX(4%);
+        background-position:160px 0;
     }
 }
 
